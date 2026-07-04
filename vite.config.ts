@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  // GitHub Pages 등 하위 경로 배포 지원 (워크플로에서 BASE_PATH=/Babaisyou/)
+  base: process.env.BASE_PATH ?? '/',
   plugins: [
     react(),
     VitePWA({
