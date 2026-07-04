@@ -1,0 +1,35 @@
+{
+  "id": 7,
+  "name": "얼음 방패",
+  "tagline": "멈추고 싶다면, 얼어붙어라.",
+  "rows": ["......", ".....G", "......", "...GV.", "......", "......"],
+  "blocks": [
+    { "x": 0, "y": 1, "color": "red", "shape": "circle" },
+    { "x": 0, "y": 3, "color": "yellow", "shape": "triangle" }
+  ],
+  "slots": 3,
+  "cards": {
+    "when": [{ "kind": "always" }, { "kind": "onGoal" }],
+    "target": [
+      { "kind": "all" },
+      { "kind": "color", "color": "red" },
+      { "kind": "color", "color": "yellow" }
+    ],
+    "action": [{ "kind": "move", "dir": "right" }, { "kind": "freezeToggle" }]
+  },
+  "win": { "kind": "onGoal", "count": 2 },
+  "winText": "두 블록 모두 목표 칸으로 — 노랑은 소멸 칸 앞에서 멈춰야 한다",
+  "par": { "ticks": 5, "rules": 2 },
+  "solution": [
+    {
+      "when": { "kind": "onGoal" },
+      "target": { "kind": "color", "color": "yellow" },
+      "action": { "kind": "freezeToggle" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "all" },
+      "action": { "kind": "move", "dir": "right" }
+    }
+  ]
+}

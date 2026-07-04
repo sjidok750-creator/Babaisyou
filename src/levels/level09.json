@@ -1,0 +1,31 @@
+{
+  "id": 9,
+  "name": "굴레 끊기",
+  "tagline": "반복은 도구다. 탈출 조건을 먼저 세워라.",
+  "rows": ["WWWWWW", "WWWWWW", "W....W", "WWWWWW", "WWWWWW"],
+  "blocks": [{ "x": 1, "y": 2, "color": "red", "shape": "circle" }],
+  "slots": 3,
+  "cards": {
+    "when": [{ "kind": "always" }, { "kind": "group", "count": 4 }],
+    "target": [
+      { "kind": "color", "color": "red" },
+      { "kind": "color", "color": "blue" }
+    ],
+    "action": [{ "kind": "clone" }, { "kind": "paint", "color": "blue" }]
+  },
+  "win": { "kind": "line", "color": "blue", "count": 4, "orientation": "row" },
+  "winText": "파란 블록 4개를 가로로 나란히",
+  "par": { "ticks": 4, "rules": 2 },
+  "solution": [
+    {
+      "when": { "kind": "group", "count": 4 },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "paint", "color": "blue" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "clone" }
+    }
+  ]
+}

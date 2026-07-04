@@ -1,0 +1,33 @@
+{
+  "id": 6,
+  "name": "낙하 단조",
+  "tagline": "떨어뜨리고, 붙이고, 벼려라.",
+  "rows": [".....", ".....", ".....", ".....", ".....", "....."],
+  "blocks": [
+    { "x": 2, "y": 0, "color": "red", "shape": "circle" },
+    { "x": 3, "y": 1, "color": "red", "shape": "circle" },
+    { "x": 2, "y": 3, "color": "red", "shape": "circle" },
+    { "x": 3, "y": 4, "color": "red", "shape": "circle" }
+  ],
+  "slots": 2,
+  "cards": {
+    "when": [{ "kind": "always" }],
+    "target": [{ "kind": "color", "color": "red" }],
+    "action": [{ "kind": "move", "dir": "down" }, { "kind": "merge" }]
+  },
+  "win": { "kind": "tier", "tier": 3, "count": 1 },
+  "winText": "3등급 블록을 만들어라",
+  "par": { "ticks": 4, "rules": 2 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "move", "dir": "down" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "merge" }
+    }
+  ]
+}

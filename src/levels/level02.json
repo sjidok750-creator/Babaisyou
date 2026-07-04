@@ -1,0 +1,33 @@
+{
+  "id": 2,
+  "name": "물들이기",
+  "tagline": "세 개가 같은 색이 되는 순간.",
+  "rows": [".....", ".....", ".....", ".....", "....."],
+  "blocks": [
+    { "x": 1, "y": 2, "color": "red", "shape": "circle" },
+    { "x": 2, "y": 2, "color": "blue", "shape": "square" },
+    { "x": 3, "y": 2, "color": "red", "shape": "circle" }
+  ],
+  "slots": 1,
+  "cards": {
+    "when": [{ "kind": "always" }],
+    "target": [
+      { "kind": "color", "color": "red" },
+      { "kind": "color", "color": "blue" }
+    ],
+    "action": [
+      { "kind": "paint", "color": "blue" },
+      { "kind": "paint", "color": "red" }
+    ]
+  },
+  "win": { "kind": "line", "color": "blue", "count": 3, "orientation": "row" },
+  "winText": "파란 블록 3개를 가로로 나란히",
+  "par": { "ticks": 1, "rules": 1 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "paint", "color": "blue" }
+    }
+  ]
+}

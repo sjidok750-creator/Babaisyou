@@ -1,0 +1,53 @@
+{
+  "id": 12,
+  "name": "대장장이의 시험",
+  "tagline": "녹이고, 비우고, 불리고, 벼려라 — 순서대로.",
+  "rows": ["WWWWWW", "WWWWWW", "W....W", "WWWWVW", "WWWWWW"],
+  "blocks": [
+    { "x": 1, "y": 2, "color": "red", "shape": "circle" },
+    { "x": 4, "y": 2, "color": "yellow", "shape": "triangle", "state": "frozen" }
+  ],
+  "slots": 5,
+  "cards": {
+    "when": [
+      { "kind": "always" },
+      { "kind": "adjacent", "color": "red" },
+      { "kind": "group", "count": 4 }
+    ],
+    "target": [
+      { "kind": "color", "color": "red" },
+      { "kind": "color", "color": "yellow" }
+    ],
+    "action": [
+      { "kind": "clone" },
+      { "kind": "merge" },
+      { "kind": "move", "dir": "down" },
+      { "kind": "freezeToggle" }
+    ]
+  },
+  "win": { "kind": "tier", "tier": 3, "count": 1, "color": "red" },
+  "winText": "3등급 빨간 블록을 벼려내라",
+  "par": { "ticks": 7, "rules": 4 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "yellow" },
+      "action": { "kind": "move", "dir": "down" }
+    },
+    {
+      "when": { "kind": "adjacent", "color": "red" },
+      "target": { "kind": "color", "color": "yellow" },
+      "action": { "kind": "freezeToggle" }
+    },
+    {
+      "when": { "kind": "group", "count": 4 },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "merge" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "clone" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "name": "첫 불꽃",
+  "tagline": "손대지 마라. 규칙이 움직인다.",
+  "rows": [".....", ".....", "....G", ".....", "....."],
+  "blocks": [{ "x": 0, "y": 2, "color": "red", "shape": "circle" }],
+  "slots": 1,
+  "cards": {
+    "when": [{ "kind": "always" }],
+    "target": [{ "kind": "color", "color": "red" }],
+    "action": [
+      { "kind": "move", "dir": "right" },
+      { "kind": "move", "dir": "left" }
+    ]
+  },
+  "win": { "kind": "onGoal", "color": "red", "count": 1 },
+  "winText": "빨간 블록을 목표 칸으로",
+  "par": { "ticks": 4, "rules": 1 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "move", "dir": "right" }
+    }
+  ]
+}

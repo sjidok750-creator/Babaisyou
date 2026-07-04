@@ -1,0 +1,31 @@
+{
+  "id": 5,
+  "name": "순서의 무게",
+  "tagline": "같은 두 카드. 순서가 운명을 가른다.",
+  "rows": ["V...G", ".....", ".....", ".....", "....."],
+  "blocks": [{ "x": 0, "y": 4, "color": "red", "shape": "circle" }],
+  "slots": 2,
+  "cards": {
+    "when": [{ "kind": "always" }, { "kind": "atWall" }],
+    "target": [{ "kind": "color", "color": "red" }],
+    "action": [
+      { "kind": "move", "dir": "right" },
+      { "kind": "move", "dir": "up" }
+    ]
+  },
+  "win": { "kind": "onGoal", "color": "red", "count": 1 },
+  "winText": "빨간 블록을 목표 칸으로 — 소멸 칸을 조심하라",
+  "par": { "ticks": 8, "rules": 2 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "move", "dir": "right" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "move", "dir": "up" }
+    }
+  ]
+}

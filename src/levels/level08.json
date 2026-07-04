@@ -1,0 +1,27 @@
+{
+  "id": 8,
+  "name": "증식로",
+  "tagline": "하나가 열이 되는 화로.",
+  "rows": [".....G", "..W...", "......", "..V...", "...W..", "G....G"],
+  "blocks": [{ "x": 0, "y": 0, "color": "red", "shape": "circle" }],
+  "slots": 3,
+  "cards": {
+    "when": [{ "kind": "always" }],
+    "target": [{ "kind": "color", "color": "red" }],
+    "action": [
+      { "kind": "clone" },
+      { "kind": "move", "dir": "right" },
+      { "kind": "move", "dir": "down" }
+    ]
+  },
+  "win": { "kind": "onGoal", "color": "red", "count": 3 },
+  "winText": "빨간 블록으로 목표 칸 3개를 모두 채워라",
+  "par": { "ticks": 10, "rules": 1 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "clone" }
+    }
+  ]
+}

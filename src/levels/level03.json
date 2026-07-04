@@ -1,0 +1,28 @@
+{
+  "id": 3,
+  "name": "담금질",
+  "tagline": "같은 등급끼리만 합쳐진다.",
+  "rows": [".....", ".....", ".....", ".....", "....."],
+  "blocks": [
+    { "x": 1, "y": 1, "color": "red", "shape": "circle" },
+    { "x": 2, "y": 1, "color": "red", "shape": "circle" },
+    { "x": 1, "y": 2, "color": "red", "shape": "circle" },
+    { "x": 2, "y": 2, "color": "red", "shape": "circle" }
+  ],
+  "slots": 1,
+  "cards": {
+    "when": [{ "kind": "always" }],
+    "target": [{ "kind": "color", "color": "red" }],
+    "action": [{ "kind": "merge" }, { "kind": "move", "dir": "up" }]
+  },
+  "win": { "kind": "tier", "tier": 3, "count": 1 },
+  "winText": "3등급 블록을 만들어라",
+  "par": { "ticks": 2, "rules": 1 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "merge" }
+    }
+  ]
+}

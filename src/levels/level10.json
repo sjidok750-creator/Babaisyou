@@ -1,0 +1,42 @@
+{
+  "id": 10,
+  "name": "용광로 청소",
+  "tagline": "얼어붙은 것을 깨우고, 전부 흘려보내라.",
+  "rows": ["......", "......", "......", "......", "......", ".....V"],
+  "blocks": [
+    { "x": 0, "y": 2, "color": "red", "shape": "circle" },
+    { "x": 2, "y": 2, "color": "green", "shape": "square", "state": "frozen" },
+    { "x": 4, "y": 0, "color": "blue", "shape": "square" },
+    { "x": 1, "y": 4, "color": "yellow", "shape": "triangle" }
+  ],
+  "slots": 4,
+  "cards": {
+    "when": [{ "kind": "always" }, { "kind": "adjacent", "color": "red" }],
+    "target": [{ "kind": "all" }, { "kind": "color", "color": "green" }],
+    "action": [
+      { "kind": "move", "dir": "right" },
+      { "kind": "move", "dir": "down" },
+      { "kind": "freezeToggle" }
+    ]
+  },
+  "win": { "kind": "clearAll" },
+  "winText": "모든 블록을 소멸 칸으로 흘려보내라",
+  "par": { "ticks": 9, "rules": 3 },
+  "solution": [
+    {
+      "when": { "kind": "adjacent", "color": "red" },
+      "target": { "kind": "color", "color": "green" },
+      "action": { "kind": "freezeToggle" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "all" },
+      "action": { "kind": "move", "dir": "right" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "all" },
+      "action": { "kind": "move", "dir": "down" }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": 4,
+  "name": "두 갈래 길",
+  "tagline": "규칙 하나로는 부족하다.",
+  "rows": ["..G...", "......", ".....G", "......", "......", "......"],
+  "blocks": [
+    { "x": 0, "y": 2, "color": "red", "shape": "circle" },
+    { "x": 2, "y": 5, "color": "blue", "shape": "square" }
+  ],
+  "slots": 2,
+  "cards": {
+    "when": [{ "kind": "always" }],
+    "target": [
+      { "kind": "color", "color": "red" },
+      { "kind": "color", "color": "blue" }
+    ],
+    "action": [
+      { "kind": "move", "dir": "right" },
+      { "kind": "move", "dir": "up" }
+    ]
+  },
+  "win": { "kind": "onGoal", "count": 2 },
+  "winText": "두 블록을 각자의 목표 칸으로",
+  "par": { "ticks": 5, "rules": 2 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "move", "dir": "right" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "blue" },
+      "action": { "kind": "move", "dir": "up" }
+    }
+  ]
+}

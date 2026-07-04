@@ -1,0 +1,41 @@
+{
+  "id": 11,
+  "name": "정각의 길",
+  "tagline": "멈추면 실패. 정확히 다섯 틱.",
+  "rows": ["WWWWWW", "WWWWWW", "WWWWWW", "W....W", "W.WWGW", "WWWWWW"],
+  "blocks": [{ "x": 1, "y": 4, "color": "red", "shape": "circle" }],
+  "slots": 4,
+  "cards": {
+    "when": [{ "kind": "always" }, { "kind": "atWall" }],
+    "target": [{ "kind": "color", "color": "red" }],
+    "action": [
+      { "kind": "move", "dir": "up" },
+      { "kind": "move", "dir": "right" },
+      { "kind": "move", "dir": "down" }
+    ]
+  },
+  "win": {
+    "kind": "exactTicks",
+    "ticks": 5,
+    "win": { "kind": "onGoal", "color": "red", "count": 1 }
+  },
+  "winText": "정확히 5틱 만에 목표 칸에 도달하라",
+  "par": { "ticks": 5, "rules": 3 },
+  "solution": [
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "move", "dir": "up" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "move", "dir": "right" }
+    },
+    {
+      "when": { "kind": "always" },
+      "target": { "kind": "color", "color": "red" },
+      "action": { "kind": "move", "dir": "down" }
+    }
+  ]
+}
