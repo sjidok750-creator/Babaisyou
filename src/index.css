@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: #0e1b2c;
+  --c-panel: #14263c;
+  --c-line: #3d5a73;
+  --c-line-soft: rgba(61, 90, 115, 0.45);
+  --c-paper: #e8dfc8;
+  --c-dim: rgba(232, 223, 200, 0.55);
+  --c-glow: rgba(242, 194, 48, 0.85);
+}
+
+:root[data-theme='light'] {
+  --c-bg: #e8dfc8;
+  --c-panel: #ded2b4;
+  --c-line: #a4936d;
+  --c-line-soft: rgba(164, 147, 109, 0.45);
+  --c-paper: #17283c;
+  --c-dim: rgba(23, 40, 60, 0.6);
+  --c-glow: rgba(200, 120, 20, 0.85);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--c-bg);
+  color: var(--c-paper);
+  font-family: Pretendard, 'Pretendard Variable', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 청사진 모눈 배경 */
+.blueprint-grid {
+  background-image:
+    linear-gradient(var(--c-line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-line-soft) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: center;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', Pretendard, sans-serif;
+}
+.font-mono-tech {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* 설계도 점선 테두리 */
+.bp-dashed {
+  border: 1px dashed var(--c-line);
+}
+
+/* 타이틀 앰비언트 라인 드로잉 */
+.draw-line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawline 9s ease-in-out infinite alternate;
+}
+@keyframes drawline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draw-line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 스크롤바 숨김 (카드 서랍) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
